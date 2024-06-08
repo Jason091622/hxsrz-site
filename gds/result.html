@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+<script type="text/javascript">
+function GetQueryString(name){
+    let reg = new RegExp("\\b"+ name +"=([^&]*)");
+    let r = location.href.match(reg);
+    if (r!=null) return decodeURIComponent(r[1]);
+}
+let bar=GetQueryString("qrresult");
+if(bar.length>0){
+    window.open("https://www.gds.org.cn/#/barcodeList/index?type=barcode&keyword=" + bar.split(",")[1]);
+}
+</script>
+</body>
+</html>
